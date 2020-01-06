@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>System</title>
+  <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/public/css/main.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon">
+  <script type="text/javascript" src="/public/js/jquery.js"></script>
+  <script type="text/javascript" src="/public/js/dialog.js"></script>
+  <script type="text/javascript" src="/public/js/index.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <img src="/public/img/book.png">
+        <h2 class="sub-header">图书管理系统</h2>
+        <a id="addBookId" href="javascript:;" class="btn btn-success">添加图书</a>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>作者</th>
+                <th>分类</th>
+                <th>描述</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="dataList">
+              {{each books}}
+                <tr>
+                  <td>{{$value.id}}</td>
+                  <td>{{$value.name}}</td>
+                  <td>{{$value.author}}</td>
+                  <td>{{$value.category}}</td>
+                  <td>{{$value.description}}</td>
+                  <td>
+                    <a href="javascript:;">编辑</a>|<a href="javascript:;">删除</a>
+                  </td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form class="form" id="addBookForm">
+    <input type="hidden" name="id">
+    名称：<input type="text" name="name"><br>
+    作者：<input type="text" name="author"><br>
+    分类：<input type="text" name="category"><br>
+    描述：<input type="text" name="description"><br>
+    <input type="button" value="提交">
+  </form>
+</body>
+</html>

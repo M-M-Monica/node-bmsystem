@@ -1,0 +1,60 @@
+body {
+  /*padding-top: 50px;*/
+}
+.main{
+  padding: 20px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.sub-header{
+  padding-bottom: 10px;
+  display: inline-block;
+}
+.row img{
+  padding: 0 0 10px 10px;
+}
+.btn-success{
+  color: #28a745;
+  background-color: #fff;
+  border-color: #28a745;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  float: right;
+}
+.table th, .table td{
+  text-align: center;
+  vertical-align: center;
+  padding: .55rem;
+}
+.table tbody td:nth-child(5){
+  width: 450px;
+}
+.form{
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  margin-left: -110px;
+}
+/*
+ * Placeholder dashboard ideas
+ */
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}

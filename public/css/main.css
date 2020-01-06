@@ -1,15 +1,6 @@
-body {
-  /*padding-top: 50px;*/
-}
 .main{
-  padding: 20px;
+  padding: 20px 0;
   margin: 0 auto;
-}
-@media (min-width: 768px) {
-  .main {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
 }
 .sub-header{
   padding-bottom: 10px;
@@ -19,42 +10,59 @@ body {
   padding: 0 0 10px 10px;
 }
 .btn-success{
-  color: #28a745;
+  color: #76c49a;
   background-color: #fff;
-  border-color: #28a745;
+  border: 2px solid #76c49a;
   border-radius: 30px;
   margin-bottom: 10px;
   float: right;
+}
+.btn-success:hover{
+  background-color: #659f8c;
+  border-color: #659f8c;
+}
+.btn-info{
+  font-size: 10px;
+  margin: 2px;
 }
 .table th, .table td{
   text-align: center;
   vertical-align: center;
   padding: .55rem;
 }
+.table tbody tr:last-of-child{
+  border-bottom: 1px solid #dee2e6;
+}
+.table tbody td:nth-child(2){
+  width: 130px;
+}
+.table tbody td:nth-child(3){
+  width: 130px;
+}
 .table tbody td:nth-child(5){
-  width: 450px;
+  width: 400px;
 }
 .form{
   display: none;
   position: absolute;
   left: 50%;
-  top: 100px;
-  margin-left: -110px;
+  top: 50px;
+  transform: translateX(-50%);
 }
-/*
- * Placeholder dashboard ideas
- */
-.placeholders {
-  margin-bottom: 30px;
-  text-align: center;
+.form input{
+  width: 250px;
+  margin: 1px;
+  padding-left: 8px;
 }
-.placeholders h4 {
-  margin-bottom: 0;
+.form input:last-of-type{
+  width: 50px;
+  position: relative;
+  left: 50%;
+  margin: 20px 0 0 -10px;
+  border-radius: 50px;
+  background-color: #fff;
 }
-.placeholder {
-  margin-bottom: 20px;
-}
-.placeholder img {
-  display: inline-block;
-  border-radius: 50%;
+.form textarea{
+  width: 250px;
+  height: 130px;
 }

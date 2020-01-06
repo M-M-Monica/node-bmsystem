@@ -1,20 +1,10 @@
 /*业务模块*/
 const db = require('./db.js');
-//渲染页面
-exports.showBooks = (req,res) => {
-	let sql = 'select * from book';
-	db.base(sql,null,(result)=>{
-		//res.json(result);
-		res.render('index.art', {books: result})
-		//console.log(result)
-	});
-};
+//返回所有图书信息
 exports.allBooks = (req,res) => {
 	let sql = 'select * from book';
 	db.base(sql,null,(result)=>{
 		res.json(result);
-		//res.render('index.art', {books: result})
-		//console.log(result)
 	});
 };
 //添加图书保存数据
@@ -44,6 +34,8 @@ exports.editBook = (req,res) => {
 	let sql = 'update book set name=?, author=?,category=?,description=? where id=?';
 	let data = [info.name,info.author,info.category,info.description,info.id];
 	db.base(sql,data,(result)=>{
+    console.log(result)
+    console.log(result.affectedRows)
 		if(result.affectedRows == 1){
 			res.json({flag:1});
 		}else{

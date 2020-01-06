@@ -6,14 +6,14 @@ const app = express()
 
 //加载静态资源
 app.use('/node_modules/',express.static('./node_modules/'))
-app.use('/public/',express.static('./public/'))
+app.use(express.static('public'))
 
 /*处理请求参数*/
-//挂载参数处理中间件（post）
+//挂载post参数处理中间件
 app.use(bodyParser.urlencoded({extended: false}))
 
-//配置模板引擎
-app.engine('art',require('express-art-template'))
+/*node配置模板引擎安装art-template，express-art-template,不需要引入art-template但express-art-template会用到*/
+//app.engine('art',require('express-art-template'))
 //app.set('views', './public/')
 
 //配置路由
@@ -23,26 +23,3 @@ app.use(router)
 app.listen(8000,function(){
 	console.log('8000running')
 })
-
-// app.get('/',function(req,res){
-// fs.readFile('./db.json','utf8',function (err, data) {
-// 		if (err) {
-// 			return res.status(500).send('error')
-// 		}
-// 		res.render('index.html', {
-// 			students: JSON.parse(data).students
-// 		})
-// 	})
-// })
-// app.get('/',function(req,res){	
-// 	res.render('index.html', {
-// 		students: [
-// 		{"id": 1, "name": "李斯", "author": 0, "category":18, "description": "游泳、唱歌、篮球"},
-// 		{"id": 2, "name": "李斯", "author": 0, "category":18, "description": "游泳、唱歌、篮球"},
-// 		{"id": 3, "name": "李斯", "author": 0, "category":18, "description": "游泳、唱歌、篮球"},
-// 		{"id": 4, "name": "李斯", "author": 0, "category":18, "description": "游泳、唱歌、篮球"},
-// 		{"id": 5, "name": "李斯", "author": 0, "category":18, "description": "游泳、唱歌、篮球"},
-// 		{"id": 6, "name": "李斯", "author": 0, "category":18, "description": "游泳、唱歌、篮球"}
-// 	]
-// 	})
-// })

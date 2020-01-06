@@ -6,10 +6,9 @@ $(function(){
 			url:'/books',
 			dataType:'json',
 			success:function(data){
-				//data.render('index.html', {books: data})
 				//渲染数据列表
-				//var html = template('index.art',{books:data});
-				//$('#dataList').html(html);
+				var html = template('tpl',{books:data});
+				$('#dataList').html(html);
 				//要在渲染完成后才能操作DOM标签
 				$('#dataList').find('tr').each(function(index,element){
 					var td = $(element).find('td:eq(5)');//操作
@@ -57,14 +56,14 @@ $(function(){
 			dataType:'json',
 			success:function(data){
 				//初始化弹窗
-				var mark = new MarkBox(600,400,'编辑图书',form.get(0));
+				var mark = new MarkBox(600,350,'编辑图书',form.get(0));
 				mark.init();
 				//填充表单数据
 				form.find('input[name=id]').val(data.id);
 				form.find('input[name=name]').val(data.name);
 				form.find('input[name=author]').val(data.author);
 				form.find('input[name=category]').val(data.category);
-				form.find('input[name=description]').val(data.description);
+				form.find('textarea[name=description]').val(data.description);
 				//对表单提交按钮重新绑定单击事件
 				form.find('input[type=button]').unbind('click').click(function(){
 					$.ajax({
@@ -90,7 +89,7 @@ $(function(){
 		$('#addBookId').click(function(){
 			var form = $('#addBookForm');
 			//实例化弹窗对象
-			var mark = new MarkBox(600,400,'添加图书',form.get(0));
+			var mark = new MarkBox(600,350,'添加图书',form.get(0));
 			mark.init();
 			form.find('input[type=button]').unbind('click').click(function(){
 				$.ajax({
@@ -102,8 +101,8 @@ $(function(){
 						if(data.flag == '1'){
 							//关闭弹窗
 							mark.close();
-							//添加图书成功之后重新渲染数据列表
-							initList();
+              //添加图书成功之后重新渲染数据列表
+              initList();
 						}
 					}
 				});

@@ -1,19 +1,9 @@
-/*
-restful api 从URL格式来表述：
-get http://localhost:3000/books
-get http://localhost:3000/books/book
-post http://localhost:3000/books/book
-get http://localhost:3000/books/book/1
-put http://localhost:3000/books/book
-put http://localhost:3000/books/book/2
-*/
 /*路由模块*/
 const express = require('express');
 const router = express.Router();
 const service = require('./service.js');
 
 /*路由处理*/
-router.get('/',service.showBooks);
 //提供所有图书信息
 router.get('/books',service.allBooks);
 //添加图书（提交表单）

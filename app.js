@@ -5,7 +5,6 @@ const bodyParser = require('body-parser')
 const app = express()
 
 //加载静态资源
-app.use('/node_modules/',express.static('./node_modules/'))
 app.use(express.static('public'))
 
 /*处理请求参数*/

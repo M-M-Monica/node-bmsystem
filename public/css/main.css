@@ -30,17 +30,17 @@
   vertical-align: center;
   padding: .55rem;
 }
-.table tbody tr:last-of-child{
+.table tbody tr:last-of-type{
   border-bottom: 1px solid #dee2e6;
 }
 .table tbody td:nth-child(2){
-  width: 130px;
+  width: 110px;
 }
 .table tbody td:nth-child(3){
-  width: 130px;
+  width: 100px;
 }
 .table tbody td:nth-child(5){
-  width: 400px;
+  width: 380px;
 }
 .form{
   display: none;

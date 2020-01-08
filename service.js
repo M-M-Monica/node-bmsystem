@@ -32,10 +32,8 @@ exports.getBookById = (req,res) => {
 exports.editBook = (req,res) => {
 	let info = req.body;
 	let sql = 'update book set name=?, author=?,category=?,description=? where id=?';
-	let data = [info.name,info.author,info.category,info.description,info.id];
+  let data = [info.name,info.author,info.category,info.description,info.id];
 	db.base(sql,data,(result)=>{
-    console.log(result)
-    console.log(result.affectedRows)
 		if(result.affectedRows == 1){
 			res.json({flag:1});
 		}else{

@@ -52,7 +52,7 @@ $(function(){
 		//根据数据id查询最新的数据
 		$.ajax({
 			type:'get',
-			url:'/books/book/'+id,
+			url:'/books/book/' + id,
 			dataType:'json',
 			success:function(data){
 				//初始化弹窗

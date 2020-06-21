@@ -7,7 +7,7 @@ exports.base = (sql,data,callback) => {
 	  host: 'localhost',//数据库所在的服务器的域名或IP地址
 	  user: 'root',//用户名称，登录数据库的账号
 	  password: '',//密码
-	  database: 'book'//数据库名称（表名）
+	  database: 'mybook'//数据库名称
 	});
 	//执行连接操作
 	connection.connect();

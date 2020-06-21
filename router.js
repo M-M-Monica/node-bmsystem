@@ -1,7 +1,10 @@
 /*路由模块*/
 const express = require('express');
 const router = express.Router();
-const service = require('./service.js');
+/*使用mysql*/
+const service = require('./mysql/service.js');
+/*使用mongodb*/
+//const service = require('./mongodb/service.js');
 
 /*路由处理*/
 //提供所有图书信息
